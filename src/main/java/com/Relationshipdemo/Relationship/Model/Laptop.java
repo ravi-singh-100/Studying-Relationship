@@ -15,6 +15,7 @@ public class Laptop {
     private int laptopId;
     private String laptopModel;
     private String laptopBrand;
-@OneToOne(mappedBy = "laptop",cascade = CascadeType.ALL)
+//@OneToOne(mappedBy = "laptop",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "laptop")
     private Student student;
 }

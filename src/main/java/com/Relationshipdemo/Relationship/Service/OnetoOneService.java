@@ -8,10 +8,9 @@ import com.Relationshipdemo.Relationship.Repository.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
-public class StudentService {
+public class OnetoOneService {
     @Autowired
     private StudentRepo studentRepo;
     @Autowired
@@ -23,12 +22,11 @@ public class StudentService {
 //        l1.setLaptopModel("model1");
         Student s1=new Student();
         s1.setAge(20);
-//        l1.setStudent(s1);
-//
-        s1.setStudentName("bc");
 
-        s1.setLaptop(laptopRepo.findById(2).get());
-//        s1.setLaptop(l1);
+        s1.setStudentName("s2");
+
+
+        s1.setLaptop(laptopRepo.findById(1).get());
 //        laptopRepo.save(l1);
         studentRepo.save(s1);
 

@@ -1,9 +1,12 @@
 package com.Relationshipdemo.Relationship.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -17,4 +20,8 @@ public class Student {
     @OneToOne
     @JoinColumn(name = "laptopId")
     private Laptop laptop;
+
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+            @JsonIgnoreProperties(value = "student")
+    List<Address> address;
 }
